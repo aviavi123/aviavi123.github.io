@@ -49,19 +49,24 @@
     const CALENDAR_ID = 'u3shlpf40gp9v4aghhcugr288@group.calendar.google.com';
     const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
     
-    // Corrected URL structure
+    // Explicit URL format
     const now = new Date().toISOString();
-    const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
+    const encodedID = encodeURIComponent(CALENDAR_ID);
+    const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodedID}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
 
     async function fetchShows() {
         try {
             const response = await fetch(URL);
+            const data = await response.json();
             
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Log the full response to the console for debugging
+            console.log("Google API Response:", data);
+
+            if (data.error) {
+                document.getElementById('calendar-feed').innerHTML = `<p>Error: ${data.error.message}</p>`;
+                return;
             }
 
-            const data = await response.json();
             const container = document.getElementById('calendar-feed');
             
             if (!data.items || data.items.length === 0) {
@@ -72,8 +77,6 @@
             container.innerHTML = data.items.map(event => {
                 const start = event.start.dateTime || event.start.date;
                 const date = new Date(start);
-                
-                // Formatting for a clean look: "May 3, 2026, 8:00 PM"
                 const formattedDate = date.toLocaleString('en-US', {
                     month: 'long',
                     day: 'numeric',
@@ -93,8 +96,8 @@
             }).join('');
 
         } catch (error) {
-            console.error('Calendar Fetch Error:', error);
-            document.getElementById('calendar-feed').innerHTML = '<p>Unable to load shows at this time.</p>';
+            console.error('Fetch error:', error);
+            document.getElementById('calendar-feed').innerHTML = '<p>Unable to connect to calendar.</p>';
         }
     }
 

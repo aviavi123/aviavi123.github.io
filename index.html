@@ -47,26 +47,28 @@
 
 <script>
     async function fetchShows() {
-        // I have manually fixed the ID and constructed the full URL here
-        const calendarId = 'u3shlpf40gp9v4aghhcugr288@group.calendar.google.com';
-        const apiKey = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
-        const now = new Date().toISOString();
+        // Updated with your exact copy-pasted ID: u3shlpf40gp94v4aghhcugr288...
+        const CALENDAR_ID = 'u3shlpf40gp94v4aghhcugr288@group.calendar.google.com';
+        const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
         
-        const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
+        const now = new Date().toISOString();
+        const encodedID = encodeURIComponent(CALENDAR_ID);
+        const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodedID}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
 
         try {
-            const response = await fetch(url);
+            const response = await fetch(URL);
             const data = await response.json();
             
-            console.log("Response Data:", data); // Check this in your console
-
-            if (data.error) {
-                document.getElementById('calendar-feed').innerHTML = `<p>Google API Error: ${data.error.message}</p>`;
-                return;
-            }
+            console.log("Google API Response:", data);
 
             const container = document.getElementById('calendar-feed');
             
+            if (data.error) {
+                // This will display the exact error message from Google on your page
+                container.innerHTML = `<p>Error: ${data.error.message}</p>`;
+                return;
+            }
+
             if (!data.items || data.items.length === 0) {
                 container.innerHTML = '<p>No upcoming shows found.</p>';
                 return;
@@ -90,8 +92,8 @@
             }).join('');
 
         } catch (error) {
-            console.error('Fetch error:', error);
-            document.getElementById('calendar-feed').innerHTML = '<p>Unable to connect to calendar.</p>';
+            console.error('Fetch Error:', error);
+            document.getElementById('calendar-feed').innerHTML = '<p>Connection failed.</p>';
         }
     }
 

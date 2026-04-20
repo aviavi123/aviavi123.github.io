@@ -45,40 +45,43 @@
         </section>
     </main>
 
-   <script>
-    // Using your specific Calendar ID and API Key
+<script>
     const CALENDAR_ID = 'u3shlpf40gp9v4aghhcugr288@group.calendar.google.com';
     const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
     
-    // We start looking from 24 hours ago to catch any timezone overlaps
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    
-    const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${yesterday.toISOString()}&singleEvents=true&orderBy=startTime&maxResults=10`;
+    // Corrected URL structure
+    const now = new Date().toISOString();
+    const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
 
     async function fetchShows() {
-        console.log("Fetching from:", URL); // This helps you debug in the browser console
         try {
             const response = await fetch(URL);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const data = await response.json();
             const container = document.getElementById('calendar-feed');
             
-            if (data.error) {
-                console.error("Google API Error:", data.error.message);
-                container.innerHTML = `<p>Error: ${data.error.message}</p>`;
-                return;
-            }
-
             if (!data.items || data.items.length === 0) {
-                container.innerHTML = '<p>No upcoming shows found on this calendar.</p>';
+                container.innerHTML = '<p>No upcoming shows scheduled. Check back soon!</p>';
                 return;
             }
 
             container.innerHTML = data.items.map(event => {
                 const start = event.start.dateTime || event.start.date;
                 const date = new Date(start);
-                const options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' };
-                const formattedDate = date.toLocaleDateString('en-US', options);
+                
+                // Formatting for a clean look: "May 3, 2026, 8:00 PM"
+                const formattedDate = date.toLocaleString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
 
                 return `
                     <div class="show-item">
@@ -90,8 +93,8 @@
             }).join('');
 
         } catch (error) {
-            console.error('Fetch Error:', error);
-            document.getElementById('calendar-feed').innerHTML = '<p>Unable to connect to calendar.</p>';
+            console.error('Calendar Fetch Error:', error);
+            document.getElementById('calendar-feed').innerHTML = '<p>Unable to load shows at this time.</p>';
         }
     }
 

@@ -106,4 +106,53 @@ hr {
         padding: 10px;
         font-size: 0.8rem;
     }
+
+    /* Apps Grid */
+.apps-container {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent-pink);
+    padding: 30px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tagline {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-pink);
+    color: var(--accent-pink);
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: var(--accent-pink);
+    color: var(--bg-blue);
+}
+
+.active {
+    border-bottom: 2px solid var(--accent-pink);
 }

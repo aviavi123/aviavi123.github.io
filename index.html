@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi Bortnick</title>
-    
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -22,18 +20,17 @@
                 <li><a href="#">Shows</a></li>
                 <li><a href="#">Visuals</a></li>
             </ul>
-            <div class="close-btn">×</div>
         </nav>
 
         <div class="branding-bar">
             <h1>Avi Bortnick</h1>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-spotify"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-soundcloud"></i></a>
-                <a href="#"><i class="fab fa-bandcamp"></i></a>
+                <a href="https://open.spotify.com/artist/your-id" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://instagram.com/your-handle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/your-page" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://youtube.com/your-channel" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://soundcloud.com/your-profile" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://your-name.bandcamp.com" target="_blank"><i class="fa-brands fa-bandcamp"></i></a>
             </div>
         </div>
     </header>
@@ -43,14 +40,49 @@
             <h2>Upcoming Shows</h2>
             <hr>
             <div id="calendar-feed">
-                <div class="show-item">
-                    <h3>Sylvia Black, Madame X, New York</h3>
-                    <p>May 3, 2026 at 8:00 pm – 11:30 pm</p>
-                </div>
+                <p>Loading shows...</p>
             </div>
-            <hr>
         </section>
     </main>
 
+    <script>
+        const CALENDAR_ID = 'u3shlpf40gp9v4aghhcugr288@group.calendar.google.com';
+        const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
+        const URL = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${new Date().toISOString()}&singleEvents=true&orderBy=startTime&maxResults=5`;
+
+        async function fetchShows() {
+            try {
+                const response = await fetch(URL);
+                const data = await response.json();
+                const container = document.getElementById('calendar-feed');
+                
+                if (!data.items || data.items.length === 0) {
+                    container.innerHTML = '<p>No upcoming shows scheduled. Check back soon!</p>';
+                    return;
+                }
+
+                container.innerHTML = data.items.map(event => {
+                    const start = event.start.dateTime || event.start.date;
+                    const date = new Date(start);
+                    const options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' };
+                    const formattedDate = date.toLocaleDateString('en-US', options);
+
+                    return `
+                        <div class="show-item">
+                            <h3>${event.summary}</h3>
+                            <p>${formattedDate}${event.location ? ' — ' + event.location : ''}</p>
+                        </div>
+                        <hr>
+                    `;
+                }).join('');
+
+            } catch (error) {
+                console.error('Error fetching calendar:', error);
+                document.getElementById('calendar-feed').innerHTML = '<p>Shows temporarily unavailable.</p>';
+            }
+        }
+
+        fetchShows();
+    </script>
 </body>
 </html>

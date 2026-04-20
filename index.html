@@ -47,25 +47,25 @@
 
 <script>
     async function fetchShows() {
-        // Updated with your exact copy-pasted ID: u3shlpf40gp94v4aghhcugr288...
         const CALENDAR_ID = 'u3shlpf40gp94v4aghhcugr288@group.calendar.google.com';
         const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
         
         const now = new Date().toISOString();
-        const encodedID = encodeURIComponent(CALENDAR_ID);
-        const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodedID}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
+        const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
+
+        // This will let us click the link in the console to see exactly what Google sees
+        console.log("Requesting URL:", URL);
 
         try {
             const response = await fetch(URL);
             const data = await response.json();
             
-            console.log("Google API Response:", data);
+            console.log("Data returned:", data);
 
             const container = document.getElementById('calendar-feed');
             
             if (data.error) {
-                // This will display the exact error message from Google on your page
-                container.innerHTML = `<p>Error: ${data.error.message}</p>`;
+                container.innerHTML = `<p>Google API Error: ${data.error.message}</p>`;
                 return;
             }
 
@@ -92,7 +92,6 @@
             }).join('');
 
         } catch (error) {
-            console.error('Fetch Error:', error);
             document.getElementById('calendar-feed').innerHTML = '<p>Connection failed.</p>';
         }
     }

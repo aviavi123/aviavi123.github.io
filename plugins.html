@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps & Plugins | AvBo Plugins</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 40px; font-weight: 700; }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .app-card:hover { transform: translateY(-5px); }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background-color: #222;
+            border-radius: 24px; /* Standard iOS icon radius */
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        .app-name { font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; }
+        .app-desc { font-size: 0.85rem; color: #888; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 60px;
+            color: #007aff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Apps & Plugins</h1>
+
+    <div class="app-grid">
+        <a href="lp33sim.html" class="app-card">
+            <div class="app-icon">
+                <img src="https://avibortnick.wordpress.com/wp-content/uploads/2026/04/screenshot-2026-04-16-at-4.12.57-pm-2.png" alt="LP-33 Sim">
+            </div>
+            <div class="app-name">LP-33 Sim</div>
+            <div class="app-desc">Vinyl & Lo-Fi FX</div>
+        </a>
+
+        <a href="#" class="app-card">
+            <div class="app-icon">
+                <div style="font-size: 2rem;">⏳</div>
+            </div>
+            <div class="app-name">Time Guru</div>
+            <div class="app-desc">Advanced Metronome</div>
+        </a>
+
+        <a href="#" class="app-card">
+            <div class="app-icon">
+                <div style="font-size: 2rem;">🎛️</div>
+            </div>
+            <div class="app-name">Echo Pitch</div>
+            <div class="app-desc">Creative Delay</div>
+        </a>
+
+        <a href="#" class="app-card">
+            <div class="app-icon">
+                <div style="font-size: 2rem;">📝</div>
+            </div>
+            <div class="app-name">LyriCue</div>
+            <div class="app-desc">Lyric Management</div>
+        </a>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main</a>
+
+</body>
+</html>

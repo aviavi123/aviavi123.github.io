@@ -3,52 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps and Plugins | Avi Bortnick</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Software & Plugins | Avi Bortnick</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0b0b;
+            color: #fff;
+            margin: 0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
+        p.subtitle { color: #888; margin-bottom: 50px; font-size: 1.1rem; }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 50px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .app-card:hover { transform: translateY(-8px); }
+
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            background-color: #1a1a1a;
+            border-radius: 30px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border: 1px solid #222;
+        }
+
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        .app-name { font-weight: 600; font-size: 1.15rem; margin-bottom: 2px; }
+        .app-type { 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: #007aff; 
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .app-desc { font-size: 0.85rem; color: #777; line-height: 1.3; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 80px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: #fff; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav class="top-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="apps.html" class="active">Apps and Plugins</a></li>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Bio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="branding-bar">
-            <h1>Avi Bortnick</h1>
-        </div>
-    </header>
+    <h1>Software & Plugins</h1>
+    <p class="subtitle">Audio tools and mobile applications by Avi Bortnick</p>
 
-    <main class="apps-container">
-        <section class="app-card">
-            <div class="app-info">
-                <h2>LP-33 Sim</h2>
-                <p class="tagline">The legendary "303" sampler sound, reverse-engineered.</p>
-                <p>Featuring 8 painstakingly modeled effects, including the prized Vinyl Simulation processor with ML-assisted matching.</p>
-                <div class="app-links">
-                    <a href="https://apps.apple.com/us/app/lp-33-sim/id6479714856" target="_blank" class="btn">App Store</a>
-                    <a href="#" class="btn secondary">Gumroad (Mac)</a>
-                </div>
-            </div>
-        </section>
+    <div class="app-grid">
+        
+        <a href="lp33sim.html" class="app-card">
+            <div class="app-icon"><img src="assets/lp33sim1024px.png" alt="LP-33 Sim"></div>
+            <span class="app-type">Plugin / iOS App</span>
+            <div class="app-name">LP-33 Sim</div>
+            <div class="app-desc">Authentic Vinyl & Lo-Fi Hardware Emulation</div>
+        </a>
 
-        <section class="app-card">
-            <div class="app-info">
-                <h2>Time Guru</h2>
-                <p class="tagline">The metronome that makes you better.</p>
-                <p>Strengthen your internal clock with randomized muting, complex meter sequences, and human voice counting.</p>
-                <div class="app-links">
-                    <a href="https://apps.apple.com/us/app/time-guru-metronome/id421929034" target="_blank" class="btn">App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.avibortnick.timeguru" target="_blank" class="btn">Google Play</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <a href="timeguru.html" class="app-card">
+            <div class="app-icon"><img src="assets/timeguru1024.png" alt="Time Guru"></div>
+            <span class="app-type">iOS / Android App</span>
+            <div class="app-name">Time Guru</div>
+            <div class="app-desc">The ultimate metronome for rhythmic mastery</div>
+        </a>
+
+        <a href="echopitch.html" class="app-card">
+            <div class="app-icon"><img src="assets/echopitch1024px.jpg" alt="Echo Pitch"></div>
+            <span class="app-type">Plugin / iOS App</span>
+            <div class="app-name">Echo Pitch</div>
+            <div class="app-desc">Creative delay with real-time pitch shifting</div>
+        </a>
+
+        <a href="lyricue.html" class="app-card">
+            <div class="app-icon"><img src="assets/lyricue1024.png" alt="LyriCue"></div>
+            <span class="app-type">iOS App</span>
+            <div class="app-name">LyriCue</div>
+            <div class="app-desc">Lyrics and cue sheets for live performance</div>
+        </a>
+
+        <a href="voxbeat.html" class="app-card">
+            <div class="app-icon"><img src="assets/voxbeat1024.png" alt="VoxBeat"></div>
+            <span class="app-type">iOS App</span>
+            <div class="app-name">VoxBeat</div>
+            <div class="app-desc">Voice-to-drums performance tool</div>
+        </a>
+
+        <a href="onfoot.html" class="app-card">
+            <div class="app-icon"><img src="assets/onfoot1024.png" alt="On Foot"></div>
+            <span class="app-type">iOS App</span>
+            <div class="app-name">On Foot</div>
+            <div class="app-desc">Privacy-first GPS walking tracker</div>
+        </a>
+
+    </div>
+
+    <a href="index.html" class="back-link">← Return to avibortnick.com</a>
 
 </body>
 </html>

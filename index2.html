@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avi Bortnick | Design. Development. Sound.</title>
+    <style>
+        :root {
+            --bg-color: #cdcecf;
+            --text-main: #000000;
+            --text-secondary: #444444;
+            --accent: #000000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+
+        /* Navigation Header */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            gap: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        header a {
+            color: var(--text-main);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        header a:hover { opacity: 1; }
+
+        /* Main Hero Section */
+        .hero {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .hero p.tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        /* Abstract Logo Section */
+        .logo-container {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* SVG Abstract Logo (AB waveform concept) */
+        .abstract-logo {
+            width: 120px;
+            height: auto;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+        }
+
+        /* Content Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 40px;
+        }
+
+        .info-col {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .info-col strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .nav-links {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            width: fit-content;
+            transition: border-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            header { justify-content: center; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="apps.html">Software</a>
+        <a href="#">Music</a>
+        <a href="#">About</a>
+        <a href="mailto:lp33sim@gmail.com">Contact</a>
+    </header>
+
+    <main class="hero">
+        <h1>Avi Bortnick<br>Design. Development. Sound.</h1>
+        <p class="tagline">Building digital products for musicians and beyond.</p>
+
+        <div class="logo-container">
+            <svg class="abstract-logo" viewBox="0 0 100 60">
+                <path d="M10,50 L35,10 L60,50 M20,40 L50,40" stroke-width="3"/>
+                <path d="M65,10 C85,10 85,25 65,25 C85,25 85,50 65,50 L60,50 L60,10 Z" stroke-width="3"/>
+                <path d="M5,30 Q15,10 25,30 T45,30 T65,30 T85,30" stroke-opacity="0.3" stroke-width="1"/>
+            </svg>
+        </div>
+
+        <div class="nav-links">
+            <a href="apps.html">Software & Plugins →</a>
+            <a href="#">Guitar & Gear →</a>
+        </div>
+    </main>
+
+    <section class="info-grid">
+        <div class="info-col">
+            <strong>Expertise</strong>
+            Audio Plugins, Mobile Applications (Swift, C++, JUCE), Acoustical Consulting, and Professional Performance.
+        </div>
+        <div class="info-col">
+            <strong>Current Roles</strong>
+            Software Developer (AvBo Plugins)<br>
+            Adjunct Professor (UPenn School of Design)<br>
+            Touring Guitarist
+        </div>
+    </section>
+
+</body>
+</html>

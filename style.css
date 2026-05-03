@@ -10,6 +10,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 18px; /* Increased base font size */
 }
 
 /* Top Navigation */
@@ -34,12 +35,12 @@ body {
     padding: 15px 20px;
     display: block;
     border-right: 1px solid rgba(209, 90, 149, 0.3);
-    font-size: 0.9rem;
+    font-size: 1.1rem; /* Increased from 0.9rem */
 }
 
 .close-btn {
     padding: 15px;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Increased from 1.5rem */
     cursor: pointer;
 }
 
@@ -55,12 +56,12 @@ body {
 .branding-bar h1 {
     font-weight: 300;
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem; /* Increased from 1.8rem */
 }
 
 .social-icons a {
     color: var(--accent-pink);
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Increased from 1.4rem */
     margin-left: 15px;
     text-decoration: none;
 }
@@ -74,12 +75,13 @@ body {
 
 .shows-section {
     width: 90%;
-    max-width: 600px;
+    max-width: 700px; /* Widened slightly to accommodate larger text */
     text-align: left;
 }
 
 .shows-section h2 {
     font-weight: 400;
+    font-size: 2rem; /* Explicitly sized header */
 }
 
 hr {
@@ -89,8 +91,60 @@ hr {
 }
 
 .show-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased from 1.2rem */
     margin-bottom: 5px;
+}
+
+/* Apps Grid */
+.apps-container {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted for larger content */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent-pink);
+    padding: 30px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    font-size: 1.1rem; /* Base card text size */
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tagline {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 1.2rem; /* Explicit size for tagline */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--accent-pink);
+    color: var(--accent-pink);
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 1rem; /* Increased from 0.8rem */
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: var(--accent-pink);
+    color: var(--bg-blue);
+}
+
+.active {
+    border-bottom: 2px solid var(--accent-pink);
 }
 
 /* Responsive Rules */
@@ -103,56 +157,10 @@ hr {
         margin-top: 15px;
     }
     .top-nav li a {
-        padding: 10px;
-        font-size: 0.8rem;
+        padding: 12px;
+        font-size: 1rem; /* Increased from 0.8rem */
     }
-
-    /* Apps Grid */
-.apps-container {
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.app-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--accent-pink);
-    padding: 30px;
-    border-radius: 4px;
-    transition: transform 0.2s;
-}
-
-.app-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.tagline {
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid var(--accent-pink);
-    color: var(--accent-pink);
-    text-decoration: none;
-    margin-top: 20px;
-    margin-right: 10px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-.btn:hover {
-    background: var(--accent-pink);
-    color: var(--bg-blue);
-}
-
-.active {
-    border-bottom: 2px solid var(--accent-pink);
+    .branding-bar h1 {
+        font-size: 2rem;
+    }
 }

@@ -45,13 +45,23 @@
     </div>
 </header>
 
-    <main class="content-area">
-        <section class="shows-section">
+    <main>
+        <section class="hero-home">
+            <img class="hero-photo" src="assets/photos/promo/avi-bortnick.jpg" alt="Avi Bortnick">
+            <p class="tagline">Guitarist · App &amp; Plugin Developer</p>
+            <p class="intro">Rhythm guitarist and electronics with John Scofield, and the maker of music apps and audio plugins.</p>
+        </section>
+
+        <nav class="quick-links">
+            <a href="apps.html">Apps &amp; Plugins</a>
+            <a href="records.html">Records</a>
+            <a href="videos.html">Videos</a>
+        </nav>
+
+        <section class="shows-home" id="shows-section" style="display: none;">
             <h2>Upcoming Shows</h2>
             <hr>
-            <div id="calendar-feed">
-                <p>Loading shows...</p>
-            </div>
+            <div id="calendar-feed"></div>
         </section>
     </main>
 
@@ -59,38 +69,27 @@
     async function fetchShows() {
         const CALENDAR_ID = 'u3shlpf40gp94v4aghhcugr288@group.calendar.google.com';
         const API_KEY = 'AIzaSyAqfx1Eb49_aRPJ5tmTQgWD92PXnWpiogo';
-        
-        const now = new Date().toISOString();
-        const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=5`;
 
-        // This will let us click the link in the console to see exactly what Google sees
-        console.log("Requesting URL:", URL);
+        const now = new Date().toISOString();
+        const URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&singleEvents=true&orderBy=startTime&maxResults=10`;
 
         try {
             const response = await fetch(URL);
             const data = await response.json();
-            
-            console.log("Data returned:", data);
 
-            const container = document.getElementById('calendar-feed');
-            
-            if (data.error) {
-                container.innerHTML = `<p>Google API Error: ${data.error.message}</p>`;
+            // No events, or an API error: leave the whole section hidden.
+            if (data.error || !data.items || data.items.length === 0) {
                 return;
             }
 
-            if (!data.items || data.items.length === 0) {
-                container.innerHTML = '<p>No upcoming shows found.</p>';
-                return;
-            }
-
-            container.innerHTML = data.items.map(event => {
+            document.getElementById('calendar-feed').innerHTML = data.items.map(event => {
                 const start = event.start.dateTime || event.start.date;
                 const date = new Date(start);
-                const formattedDate = date.toLocaleString('en-US', {
-                    month: 'long', day: 'numeric', year: 'numeric',
-                    hour: 'numeric', minute: '2-digit', hour12: true
-                });
+                const hasTime = Boolean(event.start.dateTime);
+                const opts = hasTime
+                    ? { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }
+                    : { month: 'long', day: 'numeric', year: 'numeric' };
+                const formattedDate = date.toLocaleString('en-US', opts);
 
                 return `
                     <div class="show-item">
@@ -101,8 +100,11 @@
                 `;
             }).join('');
 
+            // Reveal the section only once we actually have shows to show.
+            document.getElementById('shows-section').style.display = 'block';
+
         } catch (error) {
-            document.getElementById('calendar-feed').innerHTML = '<p>Connection failed.</p>';
+            // On failure, leave the section hidden so the home page never looks broken.
         }
     }
 

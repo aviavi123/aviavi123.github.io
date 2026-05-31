@@ -3,105 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LP-33 Sim | AvBo Plugins</title>
+    <title>LP-33 Sim | Avi Bortnick</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #eee;
-            background-color: #111;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        h1, h4 { color: #fff; }
-        .hero { margin-bottom: 35px; }
-        .hero p { font-size: 1.2rem; color: #ccc; }
-        .button-group { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; margin: 25px 0; }
-        .lemonsqueezy-button {
-            display: inline-block;
-            padding: 13px 28px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: opacity 0.2s;
-        }
-        .lemonsqueezy-button:hover { opacity: 0.9; }
-        .product-image { width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 30px 0;
-            border-radius: 8px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        footer {
-            margin-top: 60px;
-            padding: 40px 0;
-            border-top: 1px solid #333;
-            color: #888;
-            font-size: 0.9rem;
-        }
-        footer a { color: #888; text-decoration: none; margin-right: 15px; }
-        footer a:hover { border-bottom: 1px solid #888; }
-        .nav-back { margin-bottom: 20px; display: block; color: #007aff; text-decoration: none; }
-    </style>
 </head>
 <body>
 
-    <a href="index.html" class="nav-back">← Back to Projects</a>
-
-    <section class="hero">
-        <h1>LP-33 Sim</h1>
-        <p>The iconic early-2000s "303" sampler sound now as a plugin. Featuring 8 reverse-engineered effects and the legendary Vinyl Sim processor.</p>
-        
-        <div class="button-group">
-            <a href="https://avbo.lemonsqueezy.com/checkout/buy/060e3da1-a824-4756-b61a-46ce766ee364" class="lemonsqueezy-button">
-                BUY FOR MAC — $24.99
-            </a>
-            <a href="https://apps.apple.com/us/app/id6761288301" target="_blank">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;">
-            </a>
+    <header>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="apps.html">Apps and Plugins</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Bio</a></li>
+                <li><a href="mailto:aviavi@aol.com">Contact</a></li>
+                <li><a href="#">Records</a></li>
+                <li><a href="index.html">Shows</a></li>
+                <li><a href="#">Visuals</a></li>
+            </ul>
+        </nav>
+        <div class="branding-bar">
+            <h1><a href="index.html">Avi Bortnick</a></h1>
+            <div class="social-icons">
+                <a href="https://open.spotify.com/artist/4aHl1qC3nLIybYg8TO3Wip" target="_blank" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://www.instagram.com/avibortnick/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/avi.bortnick" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/avibortnick" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://soundcloud.com/aviavi-2/sets" target="_blank" title="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://avibortnick.bandcamp.com/" target="_blank" title="Bandcamp"><i class="fa-brands fa-bandcamp"></i></a>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <img src="https://avibortnick.wordpress.com/wp-content/uploads/2026/04/screenshot-2026-04-16-at-4.12.57-pm-2.png" alt="LP-33 Sim Interface" class="product-image">
+    <main class="app-detail">
+        <a href="apps.html" class="nav-back">← Back to Apps and Plugins</a>
 
-    <p>Capture the gritty, coveted sound of the iconic early-2000s "303" phrase sampler right inside your DAW or favorite Audio Unit host. LP-33 Sim is a deeply researched audio unit plugin featuring 8 painstakingly reverse-engineered effects, headlined by the prized Vinyl Simulation processor.</p>
-    
-    <p>Countless hours of A/B testing, spectral analysis, and machine-learning-assisted matching went into replicating the exact sonic character of Vinyl Sim and the other choice effects. From the aggressive, pumping compression that practically defines lo-fi hip-hop, to the warm wow-and-flutter and authentic dust and crackle, LP-33 Sim delivers the true gold standard of beatmaking.</p>
+        <div class="app-hero">
+            <img src="assets/lp33sim1024px.png" alt="LP-33 Sim icon">
+            <div class="app-hero-text">
+                <h1>LP-33 Sim</h1>
+                <div class="platforms">Mac / iOS Plugin</div>
+            </div>
+        </div>
 
-    <h4>Key Features:</h4>
-    <ul>
-        <li><strong>The Ultimate Vinyl Sim:</strong> A painstakingly faithful replication of the hardware's legendary ducking compression, pitch flutter, crackling, and lo-fi grit.</li>
-        <li><strong>8 Meticulously Replicated Effects:</strong> Vinyl Sim, Flanger, Chorus, Lo-Fi, Isolator, Pitch, FilterDrive, and Radio</li>
-        <li><strong>Modern Stereo Enhancements:</strong> Classic mono effects expanded for wide, modern stereo fields, and AM/FM Radio simulation</li>
-        <li><strong>ML-Assisted Precision:</strong> Exacting sonic matching built through rigorous spectral analysis and A/B listening tests.</li>
-        <li><strong>Retro Interface:</strong> An intuitive, hardware-inspired UI that feels instantly familiar.</li>
-    </ul>
+        <p class="lead">The iconic early-2000s "303" sampler sound, now as a plugin — featuring 8 reverse-engineered effects and the legendary Vinyl Sim processor.</p>
 
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/pKYh2S35Aok" allowfullscreen></iframe>
-    </div>
+        <div class="store-badges">
+            <a href="https://avbo.lemonsqueezy.com/checkout/buy/060e3da1-a824-4756-b61a-46ce766ee364" class="buy-btn lemonsqueezy-button">BUY FOR MAC — $24.99</a>
+            <a href="https://apps.apple.com/us/app/id6761288301" target="_blank"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+        </div>
 
-    <p>Brought to you by <strong>Avi Bortnick</strong> — a longtime user of the 303 phrase sampler with the John Scofield band.</p>
+        <img src="assets/lp33sim-screenshot.png" alt="LP-33 Sim Interface" class="product-image">
 
-    <footer>
+        <p>Capture the gritty, coveted sound of the iconic early-2000s "303" phrase sampler right inside your DAW or favorite Audio Unit host. LP-33 Sim is a deeply researched audio unit plugin featuring 8 painstakingly reverse-engineered effects, headlined by the prized Vinyl Simulation processor.</p>
+
+        <p>Countless hours of A/B testing, spectral analysis, and machine-learning-assisted matching went into replicating the exact sonic character of Vinyl Sim and the other choice effects. From the aggressive, pumping compression that practically defines lo-fi hip-hop, to the warm wow-and-flutter and authentic dust and crackle, LP-33 Sim delivers the true gold standard of beatmaking.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>The Ultimate Vinyl Sim:</strong> A painstakingly faithful replication of the hardware's legendary ducking compression, pitch flutter, crackling, and lo-fi grit.</li>
+            <li><strong>8 Meticulously Replicated Effects:</strong> Vinyl Sim, Flanger, Chorus, Lo-Fi, Isolator, Pitch, FilterDrive, and Radio.</li>
+            <li><strong>Modern Stereo Enhancements:</strong> Classic mono effects expanded for wide, modern stereo fields, plus AM/FM Radio simulation.</li>
+            <li><strong>ML-Assisted Precision:</strong> Exacting sonic matching built through rigorous spectral analysis and A/B listening tests.</li>
+            <li><strong>Retro Interface:</strong> An intuitive, hardware-inspired UI that feels instantly familiar.</li>
+        </ul>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/pKYh2S35Aok" allowfullscreen></iframe>
+        </div>
+
+        <p>Brought to you by <strong>Avi Bortnick</strong> — a longtime user of the 303 phrase sampler with the John Scofield band.</p>
+    </main>
+
+    <footer class="site-footer">
         <p><strong>LP-33 Sim</strong> is a product of <strong>AvBo Plugins</strong>.</p>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="lp33sim-privacy-policy/">Privacy Policy</a>
         <a href="mailto:lp33sim@gmail.com">Contact Support</a>
-        <p style="font-size: 0.75rem; margin-top: 20px;">© 2026 AvBo Plugins. All rights reserved.</p>
+        <p style="margin-top: 18px;">© 2026 AvBo Plugins. All rights reserved.</p>
     </footer>
 
 </body>

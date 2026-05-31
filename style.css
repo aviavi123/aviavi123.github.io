@@ -227,6 +227,10 @@ hr {
     color: var(--text-light);
 }
 
+.app-detail p a {
+    color: var(--accent-pink);
+}
+
 .app-detail .lead {
     font-size: 1.2rem;
     color: var(--text-light);

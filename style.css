@@ -453,6 +453,63 @@ a.record-card:hover .record-cover img { transform: scale(1.04); }
 
 .video-title { margin-top: 12px; color: var(--text-light); font-size: 0.95rem; line-height: 1.4; }
 
+/* Visuals hub */
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hub-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hub-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.08); }
+.hub-card i { font-size: 2.6rem; color: var(--accent-pink); margin-bottom: 16px; }
+.hub-card span { font-size: 1.2rem; color: var(--text-light); }
+
+/* Photo galleries (masonry via CSS columns) */
+.photo-grid {
+    columns: 3 260px;
+    column-gap: 16px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    display: block;
+    break-inside: avoid;
+    border: 1px solid rgba(209, 90, 149, 0.2);
+}
+
+.empty-state {
+    max-width: 600px;
+    margin: 70px auto;
+    text-align: center;
+    color: var(--text-light);
+    padding: 0 20px;
+}
+
+.empty-state i { font-size: 3rem; color: var(--accent-pink); opacity: 0.6; margin-bottom: 20px; }
+.empty-state p { opacity: 0.8; }
+
 /* Responsive Rules */
 @media (max-width: 768px) {
     .content-area {

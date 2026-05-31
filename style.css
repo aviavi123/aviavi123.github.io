@@ -392,6 +392,67 @@ a.record-card:hover .record-cover img { transform: scale(1.04); }
 .record-artist { font-size: 0.85rem; opacity: 0.9; margin-top: 2px; }
 .record-year { font-size: 0.8rem; opacity: 0.55; margin-top: 2px; }
 
+/* Videos page */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card { display: flex; flex-direction: column; }
+
+.video-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid rgba(209, 90, 149, 0.2);
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.video-thumb:hover img { transform: scale(1.04); opacity: 0.85; }
+
+.video-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(26, 58, 90, 0.7);
+    border: 2px solid var(--accent-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-pink);
+    font-size: 1.3rem;
+    pointer-events: none;
+    padding-left: 4px;
+}
+
+.video-thumb:hover .play-btn { background: var(--accent-pink); color: var(--bg-blue); }
+
+.video-title { margin-top: 12px; color: var(--text-light); font-size: 0.95rem; line-height: 1.4; }
+
 /* Responsive Rules */
 @media (max-width: 768px) {
     .content-area {

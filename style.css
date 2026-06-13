@@ -520,6 +520,37 @@ a.record-card:hover .record-cover img { transform: scale(1.04); }
 
 .video-title { margin-top: 12px; color: var(--text-light); font-size: 0.95rem; line-height: 1.4; }
 
+/* Acoustics — project experience */
+.proj-section { margin-top: 45px; }
+.proj-section > h2 { color: var(--accent-pink); font-weight: 400; font-size: 1.35rem; margin-bottom: 6px; }
+.proj-intro { opacity: 0.8; margin-top: 0; }
+
+details.proj-cat { border-bottom: 1px solid rgba(209, 90, 149, 0.3); }
+details.proj-cat:first-of-type { border-top: 1px solid rgba(209, 90, 149, 0.3); }
+
+details.proj-cat > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 4px;
+    font-size: 1.15rem;
+    color: var(--accent-pink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+details.proj-cat > summary::-webkit-details-marker { display: none; }
+details.proj-cat > summary::after { content: "+"; font-size: 1.4rem; line-height: 1; }
+details.proj-cat[open] > summary::after { content: "\2013"; }
+
+.proj-list { list-style: none; padding: 0 4px 22px; margin: 0; }
+.proj-list li { margin-bottom: 20px; }
+.proj-list li:last-child { margin-bottom: 0; }
+.proj-name { font-weight: 600; color: var(--text-light); }
+a.proj-name { color: var(--accent-pink); text-decoration: none; }
+a.proj-name:hover { text-decoration: underline; }
+.proj-loc { color: var(--accent-pink); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; margin-left: 8px; }
+.proj-list p { margin: 5px 0 0; opacity: 0.82; font-size: 0.95rem; }
+
 /* Visuals hub */
 .hub-grid {
     display: grid;

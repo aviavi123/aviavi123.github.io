@@ -271,6 +271,18 @@ hr {
 
 .buy-btn:hover { opacity: 0.85; }
 
+.coming-soon-badge {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px dashed rgba(240, 240, 240, 0.4);
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
 .product-image {
     width: 100%;
     height: auto;

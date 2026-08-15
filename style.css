@@ -279,6 +279,41 @@ hr {
     border: 1px solid rgba(209, 90, 149, 0.2);
 }
 
+.thankyou {
+    max-width: 640px;
+    text-align: center;
+}
+
+.thankyou-icon img {
+    width: 140px;
+    height: 140px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.thankyou h1 {
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: var(--text-light);
+    margin: 10px 0 20px;
+}
+
+.thankyou .lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.thankyou p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thankyou .signoff {
+    font-size: 1.15rem;
+    color: var(--accent-pink);
+    margin-top: 28px;
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;

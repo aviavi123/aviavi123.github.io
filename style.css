@@ -688,3 +688,18 @@ a.proj-name:hover { text-decoration: underline; }
     .app-detail { padding: 30px 22px; }
     .app-hero { justify-content: center; text-align: center; }
 }
+
+/* OverScores instructions widget — site theme override.
+   The widget ships its own light palette and only goes dark when the viewer's
+   system does; this site is always dark, so pin its tokens to the site colors.
+   Kept here rather than in the generated widget so regenerating it won't lose
+   this. `body ` raises specificity above the widget's own inline <style>,
+   which otherwise wins on document order. */
+body .overscores-instructions {
+    --oi-accent: var(--accent-pink);
+    --oi-bg: var(--bg-blue);
+    --oi-card: #21456a;
+    --oi-text: var(--text-light);
+    --oi-dim: rgba(240, 240, 240, 0.6);
+    --oi-line: rgba(209, 90, 149, 0.25);
+}

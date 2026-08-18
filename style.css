@@ -703,3 +703,13 @@ body .overscores-instructions {
     --oi-dim: rgba(240, 240, 240, 0.6);
     --oi-line: rgba(209, 90, 149, 0.25);
 }
+
+/* Inline links in product copy. Scoped to a class rather than `.app-detail a`
+   so it can't override the articles page, whose links have their own colour. */
+.app-detail .text-link {
+    color: rgba(240, 240, 240, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.app-detail .text-link:hover { color: var(--accent-pink); }

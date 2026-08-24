@@ -16,67 +16,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <style>
-        .license-box {
-            max-width: 650px;
-            margin: 28px auto;
-            padding: 24px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .license-box h2 {
-            margin-top: 0;
-        }
-
-        .license-email {
-            width: 100%;
-            max-width: 420px;
-            box-sizing: border-box;
-            padding: 11px 12px;
-            margin: 8px 0 12px;
-            font-size: 16px;
-        }
-
-        .license-button {
-            padding: 10px 18px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .license-result {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .license-key {
-            margin: 12px auto;
-            padding: 14px;
-            max-width: 560px;
-            overflow-wrap: anywhere;
-            font-family: monospace;
-            font-size: 14px;
-            background: rgba(128, 128, 128, 0.12);
-            border-radius: 5px;
-            user-select: all;
-        }
-
-        .license-download {
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .license-message {
-            min-height: 24px;
-            margin-top: 12px;
-        }
-    </style>
 </head>
 
 <body>
-
-<br>
 
 <header>
     <nav class="top-nav">
@@ -149,8 +91,6 @@
     </div>
 </header>
 
-<br>
-
 <main class="app-detail thankyou">
 
     <div class="thankyou-icon">
@@ -158,11 +98,7 @@
              alt="LP-33 Sim icon">
     </div>
 
-    <br>
-
     <h1>Thank You!</h1>
-
-    <br>
 
     <p class="lead">
         Thank you for purchasing LP-33 Sim and supporting independent developers!
@@ -183,8 +119,6 @@
             placeholder="Your purchase email"
             autocomplete="email"
         >
-
-        <br>
 
         <button
             type="button"
@@ -212,17 +146,17 @@
             <button
                 type="button"
                 id="copyLicenseButton"
-                class="license-button">
+                class="license-button secondary">
                 Copy License
             </button>
 
-            <p style="margin-top: 22px;">
+            <div class="license-download">
                 <a href="downloads/LP-33-Sim-Studio.dmg"
-                   class="license-button license-download"
+                   class="license-button"
                    download>
                     Download LP-33 Sim
                 </a>
-            </p>
+            </div>
 
         </div>
 
@@ -235,13 +169,9 @@
         GarageBand, Reaper, etc.
     </p>
 
-    <br>
-
     <p class="signoff">Happy music making!</p>
 
 </main>
-
-<br>
 
 <footer class="site-footer">
 
@@ -267,8 +197,6 @@
 
 </footer>
 
-<br>
-
 <script src="email.js" defer></script>
 
 <script>
@@ -293,7 +221,6 @@
 
     const copyButton =
         document.getElementById("copyLicenseButton");
-
 
     async function getLicense() {
         const email =
@@ -350,16 +277,13 @@
         }
     }
 
-
     getButton.addEventListener("click", getLicense);
-
 
     emailInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             getLicense();
         }
     });
-
 
     copyButton.addEventListener("click", async function () {
         const key = licenseKey.textContent.trim();

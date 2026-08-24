@@ -814,3 +814,9 @@ body .overscores-instructions {
 }
 
 .license-download { margin-top: 22px; }
+
+.retrieve-license {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    opacity: 0.75;
+}

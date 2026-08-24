@@ -4,64 +4,375 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You — LP-33 Sim | Avi Bortnick</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <style>
+        .license-box {
+            max-width: 650px;
+            margin: 28px auto;
+            padding: 24px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .license-box h2 {
+            margin-top: 0;
+        }
+
+        .license-email {
+            width: 100%;
+            max-width: 420px;
+            box-sizing: border-box;
+            padding: 11px 12px;
+            margin: 8px 0 12px;
+            font-size: 16px;
+        }
+
+        .license-button {
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .license-result {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .license-key {
+            margin: 12px auto;
+            padding: 14px;
+            max-width: 560px;
+            overflow-wrap: anywhere;
+            font-family: monospace;
+            font-size: 14px;
+            background: rgba(128, 128, 128, 0.12);
+            border-radius: 5px;
+            user-select: all;
+        }
+
+        .license-message {
+            min-height: 24px;
+            margin-top: 12px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <nav class="top-nav">
-            <ul>
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a class="email-link" data-user="timeguruvoxbeat" data-domain="gmail.com" href="#">Contact</a></li>
-                <li><a href="records.html">Records</a></li>
-                <li><a href="index.html">Shows</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="promo-photos.html">Promo Pics</a></li>
-                <li><a href="https://www.avibacoustics.com">Acoustics</a></li>
-            </ul>
-        </nav>
-        <div class="branding-bar">
-            <h1><a href="index.html">Avi Bortnick</a></h1>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/avibortnick/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/avibortnick" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://avibortnick.bandcamp.com/" target="_blank" title="Bandcamp"><i class="fa-brands fa-bandcamp"></i></a>
-                <a href="https://open.spotify.com/artist/4aHl1qC3nLIybYg8TO3Wip" target="_blank" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://soundcloud.com/aviavi-2/sets" target="_blank" title="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="https://www.facebook.com/avi.bortnick" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<br>
+
+<header>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="apps.html">Apps</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="bio.html">Bio</a></li>
+            <li>
+                <a class="email-link"
+                   data-user="timeguruvoxbeat"
+                   data-domain="gmail.com"
+                   href="#">
+                    Contact
+                </a>
+            </li>
+            <li><a href="records.html">Records</a></li>
+            <li><a href="index.html">Shows</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="promo-photos.html">Promo Pics</a></li>
+            <li>
+                <a href="https://www.avibacoustics.com">
+                    Acoustics
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="branding-bar">
+        <h1>
+            <a href="index.html">Avi Bortnick</a>
+        </h1>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/avibortnick/"
+               target="_blank"
+               title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.youtube.com/avibortnick"
+               target="_blank"
+               title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://avibortnick.bandcamp.com/"
+               target="_blank"
+               title="Bandcamp">
+                <i class="fa-brands fa-bandcamp"></i>
+            </a>
+
+            <a href="https://open.spotify.com/artist/4aHl1qC3nLIybYg8TO3Wip"
+               target="_blank"
+               title="Spotify">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+
+            <a href="https://soundcloud.com/aviavi-2/sets"
+               target="_blank"
+               title="SoundCloud">
+                <i class="fa-brands fa-soundcloud"></i>
+            </a>
+
+            <a href="https://www.facebook.com/avi.bortnick"
+               target="_blank"
+               title="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<br>
+
+<main class="app-detail thankyou">
+
+    <div class="thankyou-icon">
+        <img src="assets/lp33sim1024px.png"
+             alt="LP-33 Sim icon">
+    </div>
+
+    <br>
+
+    <h1>Thank You!</h1>
+
+    <br>
+
+    <p class="lead">
+        Thank you for purchasing LP-33 Sim and supporting independent developers!
+    </p>
+
+    <div class="license-box">
+
+        <h2>Your LP-33 Sim License</h2>
+
+        <p>
+            Enter the email address you used when purchasing LP-33 Sim.
+        </p>
+
+        <input
+            type="email"
+            id="licenseEmail"
+            class="license-email"
+            placeholder="Your purchase email"
+            autocomplete="email"
+        >
+
+        <br>
+
+        <button
+            type="button"
+            id="getLicenseButton"
+            class="license-button">
+            Get License
+        </button>
+
+        <div
+            id="licenseMessage"
+            class="license-message">
+        </div>
+
+        <div
+            id="licenseResult"
+            class="license-result">
+
+            <p><strong>Your license key:</strong></p>
+
+            <div
+                id="licenseKey"
+                class="license-key">
             </div>
+
+            <button
+                type="button"
+                id="copyLicenseButton"
+                class="license-button">
+                Copy License
+            </button>
+
         </div>
-    </header>
 
-    <main class="app-detail thankyou">
-        <div class="thankyou-icon">
-            <img src="assets/lp33sim1024px.png" alt="LP-33 Sim icon">
-        </div>
+    </div>
 
-        <h1>Thank You!</h1>
+    <p>
+        To install, open up LP-33 Sim once as a stand-alone app.
+        Close it, then it should be available to use as an
+        Audio Unit v3 (AUv3) plugin with Logic, Ableton,
+        GarageBand, Reaper, etc.
+    </p>
 
-        <p class="lead">Thank you for purchasing LP-33 Sim and supporting independent developers!</p>
+    <br>
 
-        <p>To install, open up LP-33 Sim once as a stand-alone app. Close it, then it should be available to use as an Audio Unit v3 (AUv3) plugin with Logic, Ableton, GarageBand, Reaper, etc.</p>
+    <p class="signoff">Happy music making!</p>
 
-        <p class="signoff">Happy music making!</p>
-    </main>
+</main>
 
-    <footer class="site-footer">
-        <p><strong>LP-33 Sim</strong> is a product of <strong>AvBo Plugins</strong>.</p>
-        <a href="lp33sim-privacy-policy/">Privacy Policy</a>
-        <a class="email-link" data-user="lp33sim" data-domain="gmail.com" href="#">Contact Support</a>
-        <p style="margin-top: 18px;">© 2026 Avi Bortnick. All rights reserved.</p>
-    </footer>
+<br>
 
-    <script src="email.js" defer></script>
+<footer class="site-footer">
+
+    <p>
+        <strong>LP-33 Sim</strong> is a product of
+        <strong>AvBo Plugins</strong>.
+    </p>
+
+    <a href="lp33sim-privacy-policy/">
+        Privacy Policy
+    </a>
+
+    <a class="email-link"
+       data-user="lp33sim"
+       data-domain="gmail.com"
+       href="#">
+        Contact Support
+    </a>
+
+    <p style="margin-top: 18px;">
+        © 2026 Avi Bortnick. All rights reserved.
+    </p>
+
+</footer>
+
+<br>
+
+<script src="email.js" defer></script>
+
+<script>
+(function () {
+    const workerURL =
+        "https://avax-license-server.avboplugins-apps.workers.dev/get-license";
+
+    const emailInput =
+        document.getElementById("licenseEmail");
+
+    const getButton =
+        document.getElementById("getLicenseButton");
+
+    const message =
+        document.getElementById("licenseMessage");
+
+    const result =
+        document.getElementById("licenseResult");
+
+    const licenseKey =
+        document.getElementById("licenseKey");
+
+    const copyButton =
+        document.getElementById("copyLicenseButton");
+
+
+    async function getLicense() {
+        const email =
+            emailInput.value.trim().toLowerCase();
+
+        if (!email) {
+            message.textContent =
+                "Please enter the email address you used for your purchase.";
+
+            result.style.display = "none";
+            return;
+        }
+
+        getButton.disabled = true;
+        getButton.textContent = "Looking up license…";
+
+        message.textContent = "";
+        result.style.display = "none";
+
+        try {
+            const response = await fetch(
+                workerURL +
+                "?email=" +
+                encodeURIComponent(email)
+            );
+
+            const data = await response.json();
+
+            if (response.ok && data.found && data.license) {
+                licenseKey.textContent = data.license;
+
+                result.style.display = "block";
+
+                message.textContent =
+                    "License found.";
+            } else if (response.status === 404) {
+                message.textContent =
+                    "No LP-33 Sim license was found for that email address. " +
+                    "If you just completed your purchase, wait a few seconds and try again.";
+            } else {
+                message.textContent =
+                    data.error ||
+                    "Unable to retrieve your license. Please try again.";
+            }
+
+        } catch (error) {
+            console.error(error);
+
+            message.textContent =
+                "Unable to contact the license server. Please try again.";
+        } finally {
+            getButton.disabled = false;
+            getButton.textContent = "Get License";
+        }
+    }
+
+
+    getButton.addEventListener("click", getLicense);
+
+
+    emailInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            getLicense();
+        }
+    });
+
+
+    copyButton.addEventListener("click", async function () {
+        const key = licenseKey.textContent.trim();
+
+        if (!key) {
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(key);
+
+            copyButton.textContent = "Copied!";
+
+            setTimeout(function () {
+                copyButton.textContent = "Copy License";
+            }, 1500);
+
+        } catch (error) {
+            console.error(error);
+
+            message.textContent =
+                "Couldn't copy automatically. Select the license key above and copy it manually.";
+        }
+    });
+})();
+</script>
+
 </body>
 </html>

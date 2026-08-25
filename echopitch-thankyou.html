@@ -50,6 +50,75 @@
 
         <p class="lead">Thank you for purchasing Echo Pitch and supporting independent developers!</p>
 
+        <div class="license-box"
+             data-license-box
+             data-worker="https://avax-license-server.avboplugins-apps.workers.dev/get-license?product=echo-pitch"
+             data-product-name="Echo Pitch">
+
+            <h2>Your Echo Pitch License</h2>
+
+            <p>
+                Enter the email address you used when purchasing Echo Pitch.
+            </p>
+
+            <input
+                type="email"
+                data-license-email
+                class="license-email"
+                placeholder="Your purchase email"
+                autocomplete="email"
+            >
+
+            <button
+                type="button"
+                data-license-get
+                class="license-button">
+                Get License
+            </button>
+
+            <div
+                data-license-message
+                class="license-message">
+            </div>
+
+            <div
+                data-license-result
+                class="license-result">
+
+                <p><strong>Your license key:</strong></p>
+
+                <div
+                    data-license-key
+                    class="license-key">
+                </div>
+
+                <button
+                    type="button"
+                    data-license-copy
+                    class="license-button secondary">
+                    Copy License
+                </button>
+
+                <!-- Uncomment once the notarized DMG is in downloads/ and the
+                     filename below replaces ECHO_PITCH_DMG.
+                <div class="license-download">
+                    <a href="downloads/ECHO_PITCH_DMG"
+                       class="license-button"
+                       download>
+                        Download Echo Pitch for Mac
+                    </a>
+                </div>
+                -->
+
+                <p class="license-note">
+                    Your Echo Pitch license allows activation on up to three
+                    computers. Please keep your license key private.
+                </p>
+
+            </div>
+
+        </div>
+
         <p>To install, open up Echo Pitch once as a stand-alone app. Close it, then it should be available to use as an Audio Unit v3 (AUv3) plugin with Logic, Ableton, GarageBand, Reaper, etc.</p>
 
         <p class="signoff">Happy music making!</p>
@@ -63,5 +132,6 @@
     </footer>
 
     <script src="email.js" defer></script>
+    <script src="license.js" defer></script>
 </body>
 </html>

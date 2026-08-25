@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Your License — Echo Pitch | Avi Bortnick</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+
+<header>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="apps.html">Apps</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="bio.html">Bio</a></li>
+            <li>
+                <a class="email-link"
+                   data-user="timeguruvoxbeat"
+                   data-domain="gmail.com"
+                   href="#">
+                    Contact
+                </a>
+            </li>
+            <li><a href="records.html">Records</a></li>
+            <li><a href="index.html">Shows</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="promo-photos.html">Promo Pics</a></li>
+            <li>
+                <a href="https://www.avibacoustics.com">
+                    Acoustics
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="branding-bar">
+        <h1>
+            <a href="index.html">Avi Bortnick</a>
+        </h1>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/avibortnick/"
+               target="_blank"
+               title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.youtube.com/avibortnick"
+               target="_blank"
+               title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://avibortnick.bandcamp.com/"
+               target="_blank"
+               title="Bandcamp">
+                <i class="fa-brands fa-bandcamp"></i>
+            </a>
+
+            <a href="https://open.spotify.com/artist/4aHl1qC3nLIybYg8TO3Wip"
+               target="_blank"
+               title="Spotify">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+
+            <a href="https://soundcloud.com/aviavi-2/sets"
+               target="_blank"
+               title="SoundCloud">
+                <i class="fa-brands fa-soundcloud"></i>
+            </a>
+
+            <a href="https://www.facebook.com/avi.bortnick"
+               target="_blank"
+               title="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="app-detail thankyou">
+
+    <div class="thankyou-icon">
+        <img src="assets/echopitch1024px.jpg"
+             alt="Echo Pitch icon">
+    </div>
+
+    <h1>Retrieve Your Echo Pitch License</h1>
+
+    <p class="lead">
+        Lost your license key? Enter your purchase email below and we'll send it to you.
+    </p>
+
+    <div class="license-box"
+         data-license-box
+         data-mode="email"
+         data-worker="https://avax-license-server.avboplugins-apps.workers.dev/email-license?product=echo-pitch"
+         data-product-name="Echo Pitch">
+
+        <h2>Your Echo Pitch License</h2>
+
+        <p>
+            Enter the email address you used to purchase Echo Pitch and we'll
+            email your license key to that address.
+        </p>
+
+        <input
+            type="email"
+            data-license-email
+            class="license-email"
+            placeholder="Your purchase email"
+            autocomplete="email"
+        >
+
+        <button
+            type="button"
+            data-license-get
+            class="license-button">
+            Email My License
+        </button>
+
+        <div
+            data-license-message
+            class="license-message">
+        </div>
+
+        <p class="license-note">
+            Your Echo Pitch license allows activation on up to three
+            computers. Please keep your license key private.
+        </p>
+
+    </div>
+
+    <!-- Uncomment once the notarized DMG is in downloads/ and the filename
+         below replaces ECHO_PITCH_DMG.
+    <div class="license-download">
+        <p>Need the installer again?</p>
+        <a href="downloads/ECHO_PITCH_DMG"
+           class="license-button secondary"
+           download>
+            Download Echo Pitch for Mac
+        </a>
+    </div>
+    -->
+
+    <p>
+        Can't find your license? Make sure you're using the same email address
+        you entered at checkout. If it still doesn't turn up, get in touch at
+        <a class="email-link text-link" data-user="avboplugins" data-domain="gmail.com" href="#"></a>
+        and we'll sort it out.
+    </p>
+
+    <p>
+        <a href="echopitch.html" class="text-link">← Back to Echo Pitch</a>
+    </p>
+
+</main>
+
+<footer class="site-footer">
+
+    <p>
+        <strong>Echo Pitch</strong> is a product of
+        <strong>AvBo Plugins</strong>.
+    </p>
+
+    <a href="echo-pitch-privacy-policy/">Privacy Policy</a>
+
+    <a href="terms-of-service/">Terms of Service</a>
+
+    <a href="refund-policy/">Refund Policy</a>
+
+    <a class="email-link"
+       data-user="avboplugins"
+       data-domain="gmail.com"
+       href="#">
+        Contact Support
+    </a>
+
+    <p style="margin-top: 18px;">
+        © 2026 Avi Bortnick. All rights reserved.
+    </p>
+
+</footer>
+
+<script src="email.js" defer></script>
+<script src="license.js" defer></script>
+
+</body>
+</html>

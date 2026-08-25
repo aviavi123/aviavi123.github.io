@@ -67,8 +67,12 @@
             hideResult();
 
             try {
+                // The endpoint may already carry a query string (e.g. ?product=…),
+                // so pick the right separator rather than always using "?".
+                const separator = workerURL.indexOf("?") === -1 ? "?" : "&";
+
                 const response = await fetch(
-                    workerURL + "?email=" + encodeURIComponent(email)
+                    workerURL + separator + "email=" + encodeURIComponent(email)
                 );
 
                 const data = await response.json();

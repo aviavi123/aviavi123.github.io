@@ -8,16 +8,31 @@
  *        data-worker="https://…/get-license"
  *        data-product-name="LP-33 Sim">
  *
- * with [data-license-email], [data-license-get], [data-license-message],
- * [data-license-result], [data-license-key], [data-license-copy] inside it.
- * The download block is optional.
+ * with [data-license-email], [data-license-get] and [data-license-message]
+ * inside it.
+ *
+ * Two modes:
+ *
+ *   default   — calls /get-license and reveals the key on the page. Needs
+ *               [data-license-result] and [data-license-key]; the copy button
+ *               and download block are optional.
+ *
+ *   data-mode="email"
+ *             — calls /email-license, which mails the key instead. Nothing is
+ *               revealed, and the same confirmation shows whether or not a
+ *               licence exists, so the page never discloses who is a customer.
  */
 (function () {
     "use strict";
 
+    const SENT_MESSAGE =
+        "If a license exists for that email address, we've sent it to you. " +
+        "Please check your inbox and spam/junk folder.";
+
     function setUpLicenseBox(box) {
         const workerURL = box.dataset.worker;
         const productName = box.dataset.productName || "your";
+        const emailMode = box.dataset.mode === "email";
 
         const emailInput = box.querySelector("[data-license-email]");
         const getButton = box.querySelector("[data-license-get]");
@@ -26,9 +41,15 @@
         const licenseKey = box.querySelector("[data-license-key]");
         const copyButton = box.querySelector("[data-license-copy]");
 
-        if (!workerURL || !emailInput || !getButton || !message || !result || !licenseKey) {
+        if (!workerURL || !emailInput || !getButton || !message) {
             return;
         }
+
+        if (!emailMode && (!result || !licenseKey)) {
+            return;
+        }
+
+        const buttonLabel = getButton.textContent.trim();
 
         async function getLicense() {
             const email = emailInput.value.trim().toLowerCase();
@@ -36,14 +57,14 @@
             if (!email) {
                 message.textContent =
                     "Please enter the email address you used for your purchase.";
-                result.style.display = "none";
+                hideResult();
                 return;
             }
 
             getButton.disabled = true;
-            getButton.textContent = "Looking up license…";
+            getButton.textContent = emailMode ? "Sending…" : "Looking up license…";
             message.textContent = "";
-            result.style.display = "none";
+            hideResult();
 
             try {
                 const response = await fetch(
@@ -52,7 +73,12 @@
 
                 const data = await response.json();
 
-                if (response.ok && data.found && data.license) {
+                if (emailMode) {
+                    // Deliberately identical whether or not a licence was found.
+                    message.textContent = response.ok
+                        ? SENT_MESSAGE
+                        : (data.error || "Unable to send your license. Please try again.");
+                } else if (response.ok && data.found && data.license) {
                     licenseKey.textContent = data.license;
                     result.style.display = "block";
                     message.textContent = "License found.";
@@ -70,7 +96,13 @@
                     "Unable to contact the license server. Please try again.";
             } finally {
                 getButton.disabled = false;
-                getButton.textContent = "Get License";
+                getButton.textContent = buttonLabel;
+            }
+        }
+
+        function hideResult() {
+            if (result) {
+                result.style.display = "none";
             }
         }
 

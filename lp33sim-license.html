@@ -101,18 +101,20 @@
     <h1>Retrieve Your LP-33 Sim License</h1>
 
     <p class="lead">
-        Lost your license key? Enter your purchase email below and we'll look it up.
+        Lost your license key? Enter your purchase email below and we'll send it to you.
     </p>
 
     <div class="license-box"
          data-license-box
-         data-worker="https://avax-license-server.avboplugins-apps.workers.dev/get-license"
+         data-mode="email"
+         data-worker="https://avax-license-server.avboplugins-apps.workers.dev/email-license"
          data-product-name="LP-33 Sim">
 
         <h2>Your LP-33 Sim License</h2>
 
         <p>
-            Enter the email address you used to purchase LP-33 Sim.
+            Enter the email address you used to purchase LP-33 Sim and we'll
+            email your license key to that address.
         </p>
 
         <input
@@ -127,7 +129,7 @@
             type="button"
             data-license-get
             class="license-button">
-            Get License
+            Email My License
         </button>
 
         <div
@@ -135,38 +137,10 @@
             class="license-message">
         </div>
 
-        <div
-            data-license-result
-            class="license-result">
-
-            <p><strong>Your license key:</strong></p>
-
-            <div
-                data-license-key
-                class="license-key">
-            </div>
-
-            <button
-                type="button"
-                data-license-copy
-                class="license-button secondary">
-                Copy License
-            </button>
-
-            <div class="license-download">
-                <a href="downloads/LP-33-Sim-Studio.dmg"
-                   class="license-button"
-                   download>
-                    Download LP-33 Sim
-                </a>
-            </div>
-
-            <p class="license-note">
-                Your LP-33 Sim license allows activation on up to three
-                computers. Please keep your license key private.
-            </p>
-
-        </div>
+        <p class="license-note">
+            Your LP-33 Sim license allows activation on up to three
+            computers. Please keep your license key private.
+        </p>
 
     </div>
 

@@ -834,3 +834,68 @@ body .overscores-instructions {
     line-height: 1.5;
     opacity: 0.7;
 }
+
+
+/* Host compatibility — two lists on the AUv3 product pages. Greys out the
+   unsupported side rather than colouring it red: it's information, not a
+   warning, and red fights the navy. */
+.compat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin: 22px 0 0;
+}
+
+.compat-col {
+    padding: 18px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(240, 240, 240, 0.18);
+    border-radius: 10px;
+}
+
+.compat-col h3 {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+}
+
+.app-detail .compat-col ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.app-detail .compat-col li {
+    position: relative;
+    margin-bottom: 9px;
+    padding-left: 26px;
+    font-size: 0.95rem;
+}
+
+.app-detail .compat-col li:last-child { margin-bottom: 0; }
+
+.app-detail .compat-col li::before {
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
+
+.compat-yes li::before { content: "\2713"; color: #6ec49a; }
+.compat-no li::before { content: "\2715"; color: rgba(240, 240, 240, 0.4); }
+.app-detail .compat-no li { opacity: 0.72; }
+
+.compat-col li .compat-qual {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.compat-note {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    opacity: 0.7;
+    margin-top: 16px;
+}

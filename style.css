@@ -342,6 +342,18 @@ hr {
     border: 0;
 }
 
+/* Portrait video (YouTube Shorts, 9:16). The padding-bottom trick is relative
+   to the container's width, so 177.78% of a full-width column would be absurdly
+   tall — cap the width and centre it instead. */
+.video-container.portrait {
+    max-width: 340px;
+    padding-bottom: 0;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Shared site footer */
 .site-footer {
     max-width: 820px;

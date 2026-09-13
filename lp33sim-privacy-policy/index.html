@@ -51,13 +51,13 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 6 September 2026</p>
+    <p class="updated">Last updated: 13 September 2026</p>
 
     <h2>What this covers</h2>
     <p>This policy covers two products:</p>
     <ul>
         <li><strong>LP-33 Sim</strong> for iPhone and iPad, sold on the App Store.</li>
-        <li><strong>LP-33 Sim Studio</strong> for Mac, sold directly from this website.</li>
+        <li><strong>LP-33 Sim Studio</strong> for Mac — the standalone app plus its Audio Unit and VST3 plug-ins — sold directly from this website.</li>
     </ul>
     <p>They behave differently in a few ways, so where it matters I've said which one I'm talking about.</p>
 
@@ -75,15 +75,17 @@
     <h2>The Mac version</h2>
 
     <h3>Checking for updates</h3>
-    <p>The Mac version can check whether a newer version exists. It reads one small file from this website that lists the current version number. This happens only when you open Settings, or when you choose "Check for Updates…" from the menu. There's no background or scheduled checking.</p>
-    <p>Like any request to any website, my web host records the usual things in its logs: your IP address, and the app and macOS version in the request. I don't use that to identify you, build a profile, or contact you. The Audio Unit plug-in performs the same check when you open its Settings panel.</p>
+    <p>The Mac version can check whether a newer version exists. This happens only when you open Settings, or when you choose "Check for Updates…" from the menu. There's no background or scheduled checking. The Audio Unit and VST3 plug-ins do the same when you open their Settings panel.</p>
+    <p>A check has two steps. First, the app sends your <strong>licence ID</strong> — a 16-character identifier, not your licence key — and the product name to my licence server on <strong>Cloudflare</strong>, which replies whether that licence is eligible for updates. It doesn't send your email address, your licence key, the app version, or anything about how you use the app. Because the ID belongs to your licence, this step isn't anonymous: it tells the server which licence is asking.</p>
+    <p>If the licence is eligible, the app then reads one small file from this website that lists the current version number.</p>
+    <p>Like any request to any website, Cloudflare and my web host record the usual things in their logs: your IP address, and the app and macOS version in the request. I don't use that to identify you, build a profile, or contact you.</p>
 
     <h3>Buying it</h3>
     <p>Purchases are handled by <strong>Paddle</strong>, who act as the merchant of record. Your name, payment details and billing information go to Paddle, not to me — see <a href="https://www.paddle.com/legal/privacy">Paddle's privacy policy</a> for how they handle that.</p>
     <p>Paddle passes me your <strong>email address</strong> so I can send you a licence key. I use it to send that key, to help you if you write to me, and — only if you've asked — to let you know when a new version is out. I don't sell it, share it, or use it for anything else, and every announcement email has an unsubscribe link.</p>
 
     <h3>Your licence</h3>
-    <p>Your licence email and key are stored in the macOS Keychain on your own Mac. The app checks them without going online — it never sends them anywhere.</p>
+    <p>Your licence email and key are stored only on your own Mac, in a file the app shares with its Audio Unit and VST3 plug-ins, so entering your licence once unlocks all three. The app checks your licence without going online, and never sends your email address or licence key anywhere. The only licence detail that leaves your Mac is the licence ID used in update checks, described above.</p>
 
     <h3>Retrieving a lost licence</h3>
     <p>Your email address and licence key are also kept in a small database I run on <strong>Cloudflare</strong>, so the <a href="../lp33sim-license.html">licence retrieval page</a> on this site can send your key back to you if you lose it. That record holds your email address, your licence key and which product it belongs to — nothing else. No presets, no usage, no payment details.</p>

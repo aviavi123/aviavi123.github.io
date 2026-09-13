@@ -320,6 +320,38 @@ hr {
     margin-right: auto;
 }
 
+/* Install instructions on the thank-you page. The page centres everything;
+   numbered steps read badly centred, so this block is left-aligned. */
+.install-steps {
+    max-width: 520px;
+    margin: 36px auto 0;
+    text-align: left;
+}
+
+.install-steps h2 {
+    margin: 0 0 4px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--accent-pink);
+    text-align: center;
+}
+
+.install-steps h3 {
+    margin: 22px 0 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.install-steps ol {
+    margin: 0 0 10px;
+    padding-left: 22px;
+}
+
+.install-steps li { margin-bottom: 6px; }
+
+.thankyou .install-steps p { margin: 0 0 10px; }
+
 .thankyou .signoff {
     font-size: 1.15rem;
     color: var(--accent-pink);

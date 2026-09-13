@@ -856,6 +856,8 @@ body .overscores-instructions {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 18px;
     margin: 22px 0 0;
+    /* Size each card to its own list; LP-33's lists are 9 vs 1. */
+    align-items: start;
 }
 
 .compat-col {

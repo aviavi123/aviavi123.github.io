@@ -75,20 +75,24 @@
     <h2>The Mac version</h2>
 
     <h3>Checking for updates</h3>
-    <p>The Mac version checks whether a newer version exists by reading one small file from this website that lists the current version number. It doesn't send your email address, your licence key, or anything about how you use it.</p>
+    <p>The Mac version can let you know when a newer version is out. A check has two steps.</p>
+    <p>First, Echo Pitch sends your <strong>licence ID</strong> — a 16-character identifier, not your licence key — and the product name to my licence server on <strong>Cloudflare</strong>, which replies whether that licence is eligible for update notifications. That request contains nothing else: not your email address, not your licence key, not the installed version, no machine or device identifier, no audio, and nothing about how you use Echo Pitch. Because the ID belongs to your licence, this step isn't anonymous: it tells the server which licence is asking.</p>
+    <p>If the licence is eligible, Echo Pitch then reads one small file from this website that lists the current version number.</p>
+    <p>When checks happen:</p>
     <ul>
-        <li>The app checks each time you open it.</li>
-        <li>The Audio Unit and VST3 plug-ins check when you open their window, at most once a day.</li>
-        <li>In the plug-ins, you can also check at any time with "Check for Updates" in the Info panel.</li>
+        <li>The app checks when you open it.</li>
+        <li>The Audio Unit and VST3 plug-ins check automatically when you open their interface, at most once a day. In between, they reuse the last result and make no update-check request. That once-a-day limit also applies after a check that failed or found the licence ineligible.</li>
+        <li>Where the ? panel has a "Check for Updates" button, pressing it checks straight away.</li>
     </ul>
-    <p>Like any request to any website, my web host records the usual things in its logs, such as your IP address and the kind of software making the request. I don't use that to identify you, build a profile, or contact you.</p>
+    <p>This check only decides whether to tell you about updates. Your licence itself is verified on your Mac, and Echo Pitch doesn't contact the server to activate or validate it during normal use.</p>
+    <p>Like any request to any website, Cloudflare and my web host record the usual things in their logs, such as your IP address and the kind of software making the request. I don't use that to identify you, build a profile, or contact you.</p>
 
     <h3>Buying it</h3>
     <p>Purchases are handled by <strong>Paddle</strong>, who act as the merchant of record. Your name, payment details and billing information go to Paddle, not to me — see <a href="https://www.paddle.com/legal/privacy">Paddle's privacy policy</a> for how they handle that.</p>
-    <p>Paddle passes me your <strong>email address</strong> so I can send you a licence key. I use it to send that key, to help you if you write to me, and — only if you've asked — to let you know when a new version is out. I don't sell it, share it, or use it for anything else, and every announcement email has an unsubscribe link.</p>
+    <p>Paddle passes me your <strong>email address</strong> so I can send you a licence key. I use it to send that key, to help you if you write to me, and to let you know about Echo Pitch updates, such as new versions and features. I don't sell it, share it, or use it for anything else, and every announcement email has an unsubscribe link.</p>
 
     <h3>Your licence</h3>
-    <p>Your licence email and key are stored only on your own Mac — in the macOS Keychain, and in a file the app shares with its Audio Unit and VST3 plug-ins, so entering your licence once unlocks all three. Echo Pitch checks your licence without going online, and never sends your email address or licence key anywhere.</p>
+    <p>Your licence email and key are stored only on your own Mac — in the macOS Keychain, and in a file the app shares with its Audio Unit and VST3 plug-ins, so entering your licence once unlocks all three. Echo Pitch checks your licence without going online, and never sends your email address or licence key anywhere. The only licence detail that leaves your Mac is the licence ID used in update checks, described above.</p>
 
     <h3>Retrieving a lost licence</h3>
     <p>Your email address and licence key are also kept in a small database I run on <strong>Cloudflare</strong>, so the <a href="../echopitch-license.html">licence retrieval page</a> on this site can send your key back to you if you lose it. That record holds your email address, your licence key and which product it belongs to — nothing else. No presets, no usage, no payment details.</p>
